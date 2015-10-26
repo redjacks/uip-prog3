@@ -16,17 +16,18 @@ def guardarNotas(notas, archivo, prom):
 		out_file.write("Promedio del estudiante: " + str(prom))
 	out_file.close()
 
-def cargarNotas(notas, archivo):
+	
+# PROBANDO FUNCION ADICIONAL. AUN EN DESARROLLO	
+#def cargarNotas(notas, archivo):
 #falta corregir esta funcion
-	in_file = open(archivo, "rt")
-	while True:
-		in_line = in_file.readline()
-		if not in_line:
-			break
-		in_line = in_line[:-1]
-		nombre, nota = in_line.split(",")
-		notas[nombre] = nota
-	in_file.close()
+#	in_file = open(archivo, "rt")
+#	while True:
+#		in_line = in_file.readline()
+#		if not in_line:
+#			break
+#		nombre, nota = in_line.split(",")
+#		notas[nombre] = nota
+#	in_file.close()
 
 def calcularPromedio(notas):
 	promedio = {k:sum(v)/5 for k,v in notas.items()}
@@ -37,8 +38,7 @@ def mostrarMenu():
 	print('1. Imprimir promedio')
 	print('2. Agregar notas')
 	print('3. Guardar notas')
-	print('4. Cargar notas')
-	print('5. Salir')
+	print('4. Salir')
 	print()
 
 if __name__ == '__main__':
@@ -62,10 +62,11 @@ if __name__ == '__main__':
 			elif opcion_menu == 3:
 				archivo = nombre
 				guardarNotas(notas_quiz, archivo, promedio)
+			#OPCION PARA FUNCION ADICIONAL	
+			#elif opcion_menu == 4:
+			#	archivo = input("Archivo a cargar: ")
+			#	cargarNotas(notas_quiz, archivo)
 			elif opcion_menu == 4:
-				archivo = input("Archivo a cargar: ")
-				cargarNotas(notas_quiz, archivo)
-			elif opcion_menu == 5:
 				break
 			else:
 				print("Opcion no valida")
