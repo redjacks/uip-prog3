@@ -9,13 +9,15 @@
 def agregarNotas(notas, nombre, nota):
 	notas[nombre] = nota
 
-def guardarNotas(notas, archivo):
+def guardarNotas(notas, archivo, prom):
 	out_file = open(archivo, "wt")
 	for k, v in notas.items():
-		out_file.write(k + "," + v + "\n")
+		out_file.write("Notas de quiz de " +k + ": " + str(v) + "\n")
+		out_file.write("Promedio del estudiante: " + str(prom))
 	out_file.close()
 
 def cargarNotas(notas, archivo):
+#falta corregir esta funcion
 	in_file = open(archivo, "rt")
 	while True:
 		in_line = in_file.readline()
@@ -59,7 +61,7 @@ if __name__ == '__main__':
 				agregarNotas(notas_quiz, nombre, notes)
 			elif opcion_menu == 3:
 				archivo = nombre
-				guardarNotas(notas_quiz, archivo)
+				guardarNotas(notas_quiz, archivo, promedio)
 			elif opcion_menu == 4:
 				archivo = input("Archivo a cargar: ")
 				cargarNotas(notas_quiz, archivo)
