@@ -1,0 +1,13 @@
+Usando como base el programa del quiz3, realizo una prueba para el metodo de
+calcular los segundos restantes para llegar al proximo minuto dado unos segundos iniciales.
+
+El programa de prueba es el calcSeg_test.py
+
+Dado una entrada inicial de 50 segundos, el programa debe dar un resultado de 10 segundos para
+llegar al minuto. Realizo una prueba de igualdad.
+
+
+class SegRestantes --> contador()
+		   --> calcSeg() *modulo a probar* 
+			--> ingresar valor de tiempo inicial y resultado esperado 
+				--> se realiza la prueba y retorna si fue superada o hubo falla
