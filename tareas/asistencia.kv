@@ -1,0 +1,26 @@
+#:import save tareaSemana8.guardar
+#:import export tareaSemana8.exportar
+
+GridLayout:
+    cols: 2
+    Label:
+        text: "NOMBRE"
+		font_size: 32
+    TextInput:
+		text: " "
+		multiline: False
+        font_size: 32
+		id: name
+    Button:
+        text: "GUARDAR"
+        background_color: .7, .7, 1, 1
+		font_size: 32
+		on_press: 
+			save(name.text)		
+    Button:
+        text: "EXPORTAR"
+        background_color: .7, .7, 1, 1
+		font_size: 32
+		on_press: 
+			export()
+    
