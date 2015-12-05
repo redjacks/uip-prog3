@@ -4,8 +4,13 @@
 		size: root.size
 		cols: 1
 		Label:
+			font_size: '48sp'
+			text: "QUIZ [color=ff3333][sub]de[/sub][/color] [color=3333ff][b]PAN[sup]v1[/sup][/b][/color]"
+			markup: True
+		Label:
 			id: label1
 			text: root.pregunta
+			
 		Button:
 			id: button1
 			padding: 10, 10
@@ -14,7 +19,7 @@
 			valign: 'middle'
 			text_size: self.size
 			on_press: 
-				par.sumarPts(1)
+				root.sumarPts(1)
 				root.change_text()
 		Button:
 			id: button2
@@ -24,5 +29,5 @@
 			valign: 'middle'
 			text_size: self.size
 			on_press: 
-				par.sumarPts(0)
+				root.sumarPts(0)
 				root.change_text()

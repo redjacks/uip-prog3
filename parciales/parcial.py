@@ -12,21 +12,7 @@ pregResp = [ ("Panama tiene mas de cien distritos.", 0), ("Panama cuenta con 5 c
 pts = 0
 i = 0
 
-def sumarPts(resp):
-	global pts
-	global i
-	if resp == pregResp[i][1]:
-	
-		print("correcto")
-		pts += 10 
-		print("total de puntos: " + str(pts))
-		#print(i)
-		#probando. La i no se esta actualizando
-	else:
-		print("equivocado")
-		print("total de puntos: " + str(pts))
-		#print(i)
-		#probando. La i no se esta actualizando
+
 		
 class YourWidget(Widget):
 	pregunta = StringProperty()
@@ -36,13 +22,26 @@ class YourWidget(Widget):
 		i = random.randint(0, 4)
 		super(YourWidget, self).__init__(**kwargs)
 		self.pregunta = str(pregResp[i][0])
+	
+	def sumarPts(self,resp):
+		global pts
+		
+		if resp == pregResp[i][1]:
+		
+			print("correcto")
+			pts += 10 
+			print("total de puntos: " + str(pts))
+			
+		else:
+			print("equivocado")
+			print("total de puntos: " + str(pts))
+			
 
 	def change_text(self):
 		global i
 		i = random.randint(0, 4)
-		#print (i)
-		#probando. La i no se esta actualizando en la funcion sumarPts
 		self.pregunta = str(pregResp[i][0])
+		return i
 
 class YourApp(App):
 	def build(self):
