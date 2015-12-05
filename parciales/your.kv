@@ -1,0 +1,28 @@
+#:import par parcial
+<YourWidget>:
+	GridLayout:
+		size: root.size
+		cols: 1
+		Label:
+			id: label1
+			text: root.pregunta
+		Button:
+			id: button1
+			padding: 10, 10
+			text: 'Cierto'
+			halign: 'center'
+			valign: 'middle'
+			text_size: self.size
+			on_press: 
+				par.sumarPts(1)
+				root.change_text()
+		Button:
+			id: button2
+			padding: 10, 10
+			text: 'Falso'
+			halign: 'center'
+			valign: 'middle'
+			text_size: self.size
+			on_press: 
+				par.sumarPts(0)
+				root.change_text()
